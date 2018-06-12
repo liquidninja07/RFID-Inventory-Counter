@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index', 'IndexController@index')->name('index');
+//Route::get('/select', 'DatabaseController@select')->name('index')
