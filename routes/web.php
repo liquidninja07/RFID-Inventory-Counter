@@ -11,12 +11,18 @@
 |
 */
 
+use App\Post;
+use Illuminate\Http\Request;
+
+Route::get('/rfids', 'RfidsController@index')->name('rfids.index');
+Route::get('/rfids/details/{id}', 'RfidsController@details')->name('rfids.details');
+Route::get('/rfids/add', 'RfidsController@add')->name('rfids.add');
+Route::post('/rfids/insert', 'RfidsController@insert')->name('rfids.insert');
+Route::get('/rfids/edit/{id}', 'RfidsController@edit')->name('rfids.edit');
+Route::post('/rfids/update/{id}', 'RfidsController@update')->name('rfids.update');
+Route::get('/rfids/delete/{id}', 'RfidsController@delete')->name('rfids.delete');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/index', 'IndexController@index')->name('index');
-//Route::get('/select', 'DatabaseController@select')->name('index')
